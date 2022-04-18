@@ -19,7 +19,7 @@ import java.util.Base64;
 public class OAuth2Client {
 
     @Value("${oauth2.url.token}")
-    String oauth2ServerTokenUrl;
+    String oauth2ServerToken;
     @Value("${oauth2.client-id}")
     String clientId;
     @Value("${oauth2.client-secret}")
@@ -47,16 +47,15 @@ public class OAuth2Client {
     @Bean
     public OAuth2ProtectedResourceDetails credentials() {
 
-        ClientCredentialsResourceDetails details = new ClientCredentialsResourceDetails();
-        details.setAccessTokenUri(oauth2ServerTokenUrl);
-        details.setClientId(clientId);
-        details.setClientSecret(new String(Base64.getUrlDecoder().decode(clientSecret)));
-        details.setGrantType(grantType);
+        ClientCredentialsResourceDetails clientCredentials = new ClientCredentialsResourceDetails();
+        clientCredentials.setAccessTokenUri(oauth2ServerToken);
+        clientCredentials.setClientId(clientId);
+        clientCredentials.setClientSecret(new String(Base64.getUrlDecoder().decode(clientSecret)));
+        clientCredentials.setGrantType(grantType);
 
         log.debug("1. public OAuth2ProtectedResourceDetails credentials()");
-        log.debug(details.toString());
 
-        return details;
+        return clientCredentials;
 
     }
 

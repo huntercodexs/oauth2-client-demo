@@ -19,6 +19,8 @@ import java.util.Base64;
 @EnableGlobalMethodSecurity(prePostEnabled=true)
 public class SecurityOauthConfiguration extends ResourceServerConfigurerAdapter {
 
+	@Value("${api.prefix:/huntercodexs/client/api}")
+	private String apiPrefix;
 	@Value("${oauth2.client-id}")
 	private String username;
 	@Value("${oauth2.client-secret}")
@@ -70,12 +72,12 @@ public class SecurityOauthConfiguration extends ResourceServerConfigurerAdapter 
 	@Override
 	public void configure(HttpSecurity http) throws Exception {
 
-		http.requestMatcher(new OAuthRequestedMatcher())
-				.authorizeRequests()
-				.antMatchers("/huntercodexs/**").authenticated()
-				.antMatchers("/others/**").permitAll().anyRequest().authenticated();
+		http/*.requestMatcher(new OAuthRequestedMatcher())*/.authorizeRequests()
+				.antMatchers(apiPrefix+"/admin").authenticated()
+				.antMatchers(apiPrefix+"/user").authenticated()
+				.antMatchers(apiPrefix+"/others").permitAll().anyRequest().authenticated();
 
-		log.debug("6. public void configure(HttpSecurity http) throws Exception http: " + http);
+		log.debug("6. public void configure(HttpSecurity http) throws Exception");
 	}
 
 }
