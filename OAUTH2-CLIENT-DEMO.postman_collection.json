@@ -1,0 +1,116 @@
+{
+	"info": {
+		"_postman_id": "b35d1d7b-c1ad-44f2-afe4-a922986c1641",
+		"name": "OAUTH2-CLIENT-DEMO",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "OAUTH2-CLIENT-DEMO",
+			"request": {
+				"auth": {
+					"type": "oauth2",
+					"oauth2": [
+						{
+							"key": "tokenType",
+							"value": "bearer",
+							"type": "string"
+						},
+						{
+							"key": "accessToken",
+							"value": "4587f3c9-8cc5-4220-872b-3d5d1da086d4",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "1234567890",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "OAUTH2DEMO_REST",
+							"type": "string"
+						},
+						{
+							"key": "tokenName",
+							"value": "huntercodexs",
+							"type": "string"
+						},
+						{
+							"key": "accessTokenUrl",
+							"value": "http://localhost:56500/huntercodexs/api/rest/oauth/v1/oauth/token",
+							"type": "string"
+						},
+						{
+							"key": "clientSecret",
+							"value": "cbfcc74b-07cd-4abb-906b-abddd8fa1bec",
+							"type": "string"
+						},
+						{
+							"key": "clientId",
+							"value": "client_id",
+							"type": "string"
+						},
+						{
+							"key": "grant_type",
+							"value": "password_credentials",
+							"type": "string"
+						},
+						{
+							"key": "addTokenTo",
+							"value": "header",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9898/huntercodexs/client/api/welcome",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9898",
+					"path": [
+						"huntercodexs",
+						"client",
+						"api",
+						"welcome"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "oauth2",
+		"oauth2": [
+			{
+				"key": "addTokenTo",
+				"value": "header",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
