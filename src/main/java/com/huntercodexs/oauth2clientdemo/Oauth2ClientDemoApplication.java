@@ -9,11 +9,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class Oauth2ClientDemoApplication {
 
 	public static void main(String[] args) {
-		log.info("\n\n\n");
-		log.info("---------------------------------------------------------------------------------------------");
-		log.debug("OAUTH2-CLIENT-DEMO STARTING");
 		SpringApplication.run(Oauth2ClientDemoApplication.class, args);
-		log.debug("OAUTH2-CLIENT-DEMO IS RUNNING");
 	}
 
 }

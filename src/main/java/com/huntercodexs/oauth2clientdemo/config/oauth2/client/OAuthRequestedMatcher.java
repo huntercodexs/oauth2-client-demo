@@ -1,4 +1,4 @@
-package com.huntercodexs.oauth2clientdemo.config;
+package com.huntercodexs.oauth2clientdemo.config.oauth2.client;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.web.util.matcher.RequestMatcher;
@@ -11,11 +11,6 @@ public class OAuthRequestedMatcher implements RequestMatcher {
     @Override
     public boolean matches(HttpServletRequest request) {
         String auth = request.getHeader("Authorization");
-
-        log.debug("7. public boolean matches(HttpServletRequest request) auth");
-        log.debug("7.1 auth: " + auth);
-        log.debug("7.2 request: " + request);
-
         return (auth != null) && auth.startsWith("Bearer");
     }
     
