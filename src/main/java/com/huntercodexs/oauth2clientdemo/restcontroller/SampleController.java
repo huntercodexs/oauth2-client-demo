@@ -1,5 +1,6 @@
 package com.huntercodexs.oauth2clientdemo.restcontroller;
 
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 

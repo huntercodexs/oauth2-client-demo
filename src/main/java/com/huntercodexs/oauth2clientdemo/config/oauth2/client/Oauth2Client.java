@@ -49,10 +49,10 @@ public class Oauth2Client extends ResourceServerConfigurerAdapter {
 	@Bean
 	public RemoteTokenServices remoteTokenServices() {
 		if (sourceCredentials.equals("db")) {
-			Oauth2ClientEntity credentials = oauth2ClientRepository.findCredentials();
-			username = credentials.getClientId();
-			password = credentials.getClientSecret();
-			oauth2ServerCheckTokenUrl = credentials.getUrlCheckToken();
+			Oauth2ClientEntity authorization = oauth2ClientRepository.findClientAuthorization();
+			username = authorization.getClientId();
+			password = authorization.getClientSecret();
+			oauth2ServerCheckTokenUrl = authorization.getUrlCheckToken();
 		}
 		RemoteTokenServices remoteTokenServices = new RemoteTokenServices();
 		AccessTokenConverter accessTokenConverter = accessTokenConverter();
@@ -74,24 +74,23 @@ public class Oauth2Client extends ResourceServerConfigurerAdapter {
 	
 	@Override
 	public void configure(HttpSecurity http) throws Exception {
-		http/*.requestMatcher(new OAuthRequestedMatcher())*/
-				.authorizeRequests()
-				/*Allowed Endpoints*/
-				.antMatchers(apiPrefix+"/others").permitAll()
-				/*Restrict Endpoints*/
-				.antMatchers(apiPrefix+"/admin").authenticated()
-				.antMatchers(apiPrefix+"/user").authenticated()
-				/*Swagger*/
-				.antMatchers("/swagger-ui/**").permitAll()
-				.antMatchers("/api-docs/**").permitAll()
-				.antMatchers("/api-docs.yaml").permitAll()
-				/*Swagger (With Prefix)*/
-				.antMatchers(apiPrefix+"/swagger-ui/**").permitAll()
-				.antMatchers(apiPrefix+"/api-docs/**").permitAll()
-				.antMatchers(apiPrefix+"/api-docs.yaml").permitAll()
-				/*Actuator*/
-				.antMatchers("/actuator/**").permitAll()
-				.anyRequest().authenticated();
+		http.authorizeRequests()
+			/*Allowed Endpoints*/
+			.antMatchers(apiPrefix+"/others").permitAll()
+			/*Restrict Endpoints*/
+			.antMatchers(apiPrefix+"/admin").authenticated()
+			.antMatchers(apiPrefix+"/user").authenticated()
+			/*Swagger*/
+			.antMatchers("/swagger-ui/**").permitAll()
+			.antMatchers("/api-docs/**").permitAll()
+			.antMatchers("/api-docs.yaml").permitAll()
+			/*Swagger (With Prefix)*/
+			.antMatchers(apiPrefix+"/swagger-ui/**").permitAll()
+			.antMatchers(apiPrefix+"/api-docs/**").permitAll()
+			.antMatchers(apiPrefix+"/api-docs.yaml").permitAll()
+			/*Actuator*/
+			.antMatchers("/actuator/**").permitAll()
+			.anyRequest().authenticated();
 	}
 
 }

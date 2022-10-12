@@ -8,5 +8,5 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface Oauth2ClientRepository extends JpaRepository<Oauth2ClientEntity, Long> {
     @Query(value = "SELECT * FROM oauth2_client LIMIT 1", nativeQuery = true)
-    Oauth2ClientEntity findCredentials();
+    Oauth2ClientEntity findClientAuthorization();
 }

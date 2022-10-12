@@ -1,0 +1,218 @@
+{
+	"info": {
+		"_postman_id": "5d5be4a4-4449-4378-84b5-02f392598efc",
+		"name": "JAVA - OAUTH2-CLIENT-DEMO",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Admin",
+			"request": {
+				"auth": {
+					"type": "oauth2",
+					"oauth2": [
+						{
+							"key": "username",
+							"value": "OAUTH2DEMO_USER",
+							"type": "string"
+						},
+						{
+							"key": "tokenType",
+							"value": "bearer",
+							"type": "string"
+						},
+						{
+							"key": "accessToken",
+							"value": "83423b80-e448-4821-83a9-73aed9a9b3f7",
+							"type": "string"
+						},
+						{
+							"key": "accessTokenUrl",
+							"value": "http://localhost:33100/huntercodexs/server/api/rest/oauth/v1/oauth/token",
+							"type": "string"
+						},
+						{
+							"key": "grant_type",
+							"value": "password_credentials",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "1234567890",
+							"type": "string"
+						},
+						{
+							"key": "tokenName",
+							"value": "huntercodexs",
+							"type": "string"
+						},
+						{
+							"key": "clientSecret",
+							"value": "cbfcc74b-07cd-4abb-906b-abddd8fa1bec",
+							"type": "string"
+						},
+						{
+							"key": "clientId",
+							"value": "client_id",
+							"type": "string"
+						},
+						{
+							"key": "addTokenTo",
+							"value": "header",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:33009/huntercodexs/client/api/admin",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "33009",
+					"path": [
+						"huntercodexs",
+						"client",
+						"api",
+						"admin"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User",
+			"request": {
+				"auth": {
+					"type": "oauth2",
+					"oauth2": [
+						{
+							"key": "tokenType",
+							"value": "bearer",
+							"type": "string"
+						},
+						{
+							"key": "accessToken",
+							"value": "83423b80-e448-4821-83a9-73aed9a9b3f7",
+							"type": "string"
+						},
+						{
+							"key": "accessTokenUrl",
+							"value": "http://localhost:33100/huntercodexs/server/api/rest/oauth/v1/oauth/token",
+							"type": "string"
+						},
+						{
+							"key": "grant_type",
+							"value": "password_credentials",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "OAUTH2DEMO_USER",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "1234567890",
+							"type": "string"
+						},
+						{
+							"key": "tokenName",
+							"value": "huntercodexs",
+							"type": "string"
+						},
+						{
+							"key": "clientSecret",
+							"value": "cbfcc74b-07cd-4abb-906b-abddd8fa1bec",
+							"type": "string"
+						},
+						{
+							"key": "clientId",
+							"value": "client_id",
+							"type": "string"
+						},
+						{
+							"key": "addTokenTo",
+							"value": "header",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:33009/huntercodexs/client/api/user",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "33009",
+					"path": [
+						"huntercodexs",
+						"client",
+						"api",
+						"user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Others",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:33009/huntercodexs/client/api/others",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "33009",
+					"path": [
+						"huntercodexs",
+						"client",
+						"api",
+						"others"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "oauth2",
+		"oauth2": [
+			{
+				"key": "addTokenTo",
+				"value": "header",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}

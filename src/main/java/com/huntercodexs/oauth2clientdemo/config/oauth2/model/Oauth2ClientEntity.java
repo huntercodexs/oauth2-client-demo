@@ -14,7 +14,7 @@ import java.util.Calendar;
 public class Oauth2ClientEntity {
 
     @Id
-    @GeneratedValue(strategy= GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
     @Column
@@ -27,12 +27,12 @@ public class Oauth2ClientEntity {
     private String grantType;
 
     @Column
-    private String urlToken;
-
-    @Column
     private String urlCheckToken;
 
     @Column
     private int status;
+
+    @Column
+    private String authorizationServer;
 
 }
