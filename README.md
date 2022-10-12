@@ -45,6 +45,16 @@ Java HotSpot(TM) 64-Bit Server VM (build 25.212-b10, mixed mode)
 
 This project only can be used as the OAuth2 Resource Server, ie, is not possible generate token.
 
+This client receives any request from some end user wanting to consult some internal content.
+
+But before the user makes this request, he needs to inform the data for client authorization and the credentials to authenticate his user.
+
+This way OAUTH2SERVER can check if it is allowed to generate a token for the user's request and then return the token to the user.
+
+Then the user uses the token generated in the OAUTH2SERVER to send a query request to some internal content on the client.
+
+The client in turn makes a query to the OAUTH2SERVER so that it checks if the token is valid, and then releases the content to the user.
+
 > Diagrams
 
 - Diagram Flow Detailed
