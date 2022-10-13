@@ -1,14 +1,12 @@
 # OAUTH2 CLIENT DEMO
 Just an OAuth2 Client
 
-
 # Resources
 
 * MVC
 * Maven Project
 * Java 8 (jdk-8u212)
 * Spring Boot 2.0.1.RELEASE
-
 
 # Dependencies
 
@@ -37,7 +35,6 @@ java version "1.8.0_212"
 Java(TM) SE Runtime Environment (build 1.8.0_212-b10)
 Java HotSpot(TM) 64-Bit Server VM (build 25.212-b10, mixed mode)
 </pre>
-
 
 # Overview
 
@@ -73,7 +70,6 @@ Please, before starting this project have sure that the steps is already complet
 - Create the tables and insert data into database demo from file: src/main/resources/database.sql
 - Check if the Service Discovery is available to register
 - Use the postman file as support to make a tests
-
 
 # Postman
 
